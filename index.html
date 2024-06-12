@@ -16,8 +16,35 @@
   <header class="header">
     <img class="header__img" src="./images/titulo.png" alt="Titulo Around the U.S">
   </header>
-  
-  <main></main>
+
+  <main class="content">
+
+    <div class="profile">
+      <img class="profile__img" src="./images/Avatarjacquescosteau.png" alt="profile picture">
+      <div class="profile__info">
+        <h1 class="profile__name"></h1>
+        <h2 class="profile__job"></h2>
+      </div>
+      <button name="openFormInfo" id="btn-info" class="profile__btn-info"></button>
+      <button name="openFormCard" id="btn-card" class="profile__btn-card">+</button>
+
+      <form name="formProfile" id="profile-form" class="profile__form" novalidate>
+        <input name="profileFormClose" id="profile-form-close" class="profile__form-close" type="button" value="X">
+        <div class="profile__form-box">
+          <div class="profile__form-title">Editar Perfil</div>
+          <label id="labelname">
+            <input name="nameProfile" id="profile-name" class="profile__input profile__form-name" type="text" placeholder="Jacques Costeau" minlength="2" maxlength="40" required>
+            <span id="profile-name-error" class="profile__form-error"></span>
+          </label>
+          <label id="labeljob">
+            <input name="jobProfile" id="profile-job" class="profile__input profile__form-job" type="text" placeholder="Explorador" minlength="2" maxlength="200" required>
+            <span id="profile-job-error" class="profile__form-error"></span>
+          </label>
+          <button id="profile-submit-disabled" class="profile__form-submit" type="submit" disabled>Salvar</button>
+        </div>
+      </form>
+
+  </main>
   <footer></footer>
   <script src="./script/index.js"></script>
 </body>
