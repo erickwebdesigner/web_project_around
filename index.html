@@ -43,7 +43,38 @@
           <button id="profile-submit-disabled" class="profile__form-submit" type="submit" disabled>Salvar</button>
         </div>
       </form>
+    </div>
+    
+    <div class="cards">
+      <form class="cards__form" id="card-form" method="post" novalidate>
+        <input name="cardsFormClose" id="cards-form-close" class="cards__form-close" type="button" value="X">
+        <div class="cards__form-box">
+          <div class="cards__form-title">Novo Local</div>
+          <label>
+            <input name="nameCard" id="card-name" class="cards__input cards__form-name" type="text" placeholder="Título" minlength="2" maxlength="30" required>
+            <span id="card-name-error" class="cards__form-error"></span>
+          </label>
+          <label>
+            <input name="linkCard" id="card-link" class="cards__input cards__form-link" type="url" placeholder="Link da imagem" required>
+            <span id="card-link-error" class="cards__form-error"></span>
+          </label>
+          <button id="card-submit-disabled" class="cards__form-submit" type="submit" disabled>Criar</button>
+        </div>
+      </form>
+    </div>
 
+    <template class="cards__box">
+      <div class="cards__itens">
+        <img class="cards__delete" src="./images/Trash.png">
+        <img class="cards__image" src="./images/valeyosemite.png" alt="fotos em cards">
+        <div class="cards__info">
+          <h1 class="cards__info-title"></h1>
+          <button class="cards__info-button"></button>
+        </div>
+      </div>
+    </template >
+
+    </div>
   </main>
   <footer></footer>
   <script src="./script/index.js"></script>

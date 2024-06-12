@@ -1,0 +1,170 @@
+.cards__form{
+  opacity: 0;
+  pointer-events: none;
+  flex-direction: column;
+  margin: -180px 220px 0px;
+  display: flex;
+  position: absolute;
+}
+
+.cards__form-open{
+  position: absolute;
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.cards__form-close:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.cards__form-close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-top: -40px;
+  margin-left: 420px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 40px;
+  z-index: 1;
+}
+
+.cards__form-box {
+  width: 430px;
+  height: 330px;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.cards__form-title {
+  margin: 34px 64px 54px 36px;
+  font-family: 'Inter';
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+}
+
+.cards__form-name:valid{
+  border-bottom: 1px solid green;
+}
+
+.cards__form-name:invalid{
+  border-bottom: 1px solid red;
+}
+
+.cards__form-name {
+  width: 358px;
+  height: 27.26px;
+  margin: 0px 36px 20px;
+  border: 0;
+}
+
+.cards__form-link:valid{
+  border-bottom: 1px solid green;
+}
+
+.cards__form-link:invalid{
+  border-bottom: 1px solid red;
+}
+
+.cards__form-link {
+  width: 358px;
+  height: 27.26px;
+  margin: 0px 36px 0px;
+  border: 0;
+}
+
+#card-submit-disabled:disabled{
+  background-color: #ccc;
+}
+
+.cards__form-submit:hover {
+  transition: 0.2s;
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.cards__form-submit {
+  width: 358px;
+  height: 50.15px;
+  margin: 30px 36px 37px;
+  border-radius: 2px;
+  background-color: #000000;
+  color: white;
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cards__form-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: Inter;
+  font-size: 9px;
+  font-weight: 400;
+  line-height: 14.52px;
+  width: 358px;
+  margin: 0px 36px 0px;
+  display: flex;
+}
+
+
+@media screen and (max-width: 392px) {
+  .cards__form {
+    align-items: center;
+    margin-right: 200px;
+  }
+
+  .cards__form-box {
+    width: 282px;
+    height: 322px;
+  }
+
+  .cards__form-close {
+    margin-left: 300px;
+  }
+
+  .cards__form-title {
+    width: 238px;
+    height: 22px;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.78px;
+  }
+
+  .cards__form-name {
+    width: 238px;
+    height: 26px;
+    margin: 0px 22px 29px;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    opacity: 20%;
+  }
+
+  .cards__form-link{
+    width: 238px;
+    height: 26px;
+    margin: 0px 22px 30px;
+  }
+
+  .cards__form-submit {
+    width: 238px;
+    height: 46px;
+    margin: 0px 22px 25px;
+    font-size: 14px;
+    line-height: 16.94px;
+  }
+  }
