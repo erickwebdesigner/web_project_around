@@ -1,0 +1,26 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  width: 880px;
+  height: 74px;
+  margin: 45px auto 40px;
+  border-bottom: 1px solid #545454;
+}
+
+.header__img {
+  width: 173px;
+  height: 33px;
+}
+
+@media screen and (max-width: 990px) {
+.header__img {
+  margin-left: 20px;
+}
+}
+
