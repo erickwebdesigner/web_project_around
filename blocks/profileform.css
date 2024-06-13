@@ -112,6 +112,8 @@
 }
 
 .profile__form-error {
+  margin: 0px 36px 0px;
+  display: flex;
   color: red;
   font-size: 12px;
   margin-top: 5px;
@@ -120,8 +122,6 @@
   font-weight: 400;
   line-height: 14.52px;
   width: 358px;
-  margin: 0px 36px 0px;
-  display: flex;
 }
 
 
