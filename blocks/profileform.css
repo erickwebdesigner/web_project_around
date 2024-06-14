@@ -55,12 +55,12 @@
 }
 
 .profile__form-name:valid{
-  border-bottom: 1px solid green;
+  border-bottom: 2px solid green;
 }
 
 
 .profile__form-name:invalid{
-  border-bottom: 1px solid red;
+  border-bottom: 2px solid red;
 }
 .profile__form-name {
   width: 358px;
@@ -71,12 +71,12 @@
 }
 
 .profile__form-job:valid{
-  border-bottom: 1px solid green;
+  border-bottom: 2px solid green;
 }
 
 
 .profile__form-job:invalid{
-  border-bottom: 1px solid red;
+  border-bottom: 2px solid red;
 }
 
 .profile__form-job {
@@ -123,51 +123,3 @@
   width: 358px;
 }
 
-
-
-@media screen and (max-width: 392px) {
-.profile__form {
-  align-items: center;
-  margin-right: 200px;
-}
-
-.profile__form-box {
-  width: 282px;
-  height: 322px;
-}
-
-.profile__form-close {
-  margin-left: 300px;
-}
-
-.profile__form-title {
-  width: 238px;
-  height: 22px;
-  font-size: 18px;
-  font-weight: 900;
-  line-height: 21.78px;
-}
-
-.profile__form-name {
-  width: 238px;
-  height: 26px;
-  margin: 0px 22px 29px;
-  border: 0;
-  border-bottom: 1px solid #000000;
-  opacity: 20%;
-}
-
-.profile__form-job {
-  width: 238px;
-  height: 26px;
-  margin: 0px 22px 30px;
-}
-
-.profile__form-submit {
-  width: 238px;
-  height: 46px;
-  margin: 0px 22px 25px;
-  font-size: 14px;
-  line-height: 16.94px;
-}
-}

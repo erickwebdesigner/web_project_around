@@ -1,15 +1,9 @@
-body {
-  background-color: black;
-  color: white;
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Inter', sans-serif;
-}
-
 .header {
+  display: flex;
   width: 880px;
   height: 74px;
-  margin: 45px auto 40px;
+  padding-top: 45px;
+  margin: 0px auto 40px;
   border-bottom: 1px solid #545454;
 }
 
@@ -18,9 +12,14 @@ body {
   height: 33px;
 }
 
-@media screen and (max-width: 990px) {
-.header__img {
-  margin-left: 20px;
-}
-}
+@media screen and (max-width: 540px) {
+  .header {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 5px;
+  }
 
+  .header__img{
+    margin-left: 27px;
+  }
+}

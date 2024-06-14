@@ -90,22 +90,3 @@
   border: none;
   background-repeat: no-repeat;
 }
-
-@media screen and (max-width: 875px) {
-.cards {
-  width: 581px;
-  grid-template-columns: repeat(2, auto);
-  margin: 50px auto 0px;
-}
-
-}
-
-@media screen and (max-width: 390px) {
-.cards {
-  width: 282px;
-  display: flex;
-  flex-direction: column;
-  margin: 50px auto 0px;
-  align-self: center;
-}
-}
