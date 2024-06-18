@@ -12,19 +12,3 @@
   color: #545454;
 }
 
-@media screen and (max-width: 1660px) and (min-width: 880px) {
-  .footer {
-    width: 880px;
-    margin: 50px 200px 36px;
-  }
-}
-
-@media screen and (max-width: 879px) and (min-width: 600px) {
-  .footer {
-    width: 880px;
-  }
-
-  .footer__title{
-    margin-left: 150px;
-  }
-}
