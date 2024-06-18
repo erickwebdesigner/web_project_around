@@ -20,11 +20,23 @@ body {
 .header__title {
   width: 126px;
   height: 24px;
-  margin: 0 0px 41px 24px ;
+  margin: 0px 0px 41px 24px ;
 }
 
 @media screen and (max-width: 880px) {
   .header {
-    justify-content: flex-start;
+    justify-content: flex-start; /* Align to start for small screens */
+  }
+}
+
+@media screen and (min-width:880px) and (max-width: 1430px) {
+  .header {
+  width: 880px;
+  margin: 28px auto 41px;
+  }
+
+  .header__title{
+    width: 173px;
+    height: 33px;
   }
 }
