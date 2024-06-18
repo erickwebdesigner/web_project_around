@@ -1,5 +1,3 @@
-//funções referentes a abertura e fechamento de formulário
-
 const profbtn = document.querySelector('.profile__btn-info');
 const formclose = document.querySelector('.profile__form-close');
 const nameProfile = document.querySelector('.profile__name');
@@ -7,45 +5,37 @@ const jobProfile = document.querySelector('.profile__job');
 const nameInput = document.querySelector('.profile__form-name');
 const jobInput = document.querySelector('.profile__form-job');
 const formEdit = document.querySelector('.profile__form');
+const submitButton = document.querySelector('.profile__form-submit');
 
-
+// Inicializar os campos do perfil
 nameProfile.textContent = 'Jaques Costeau';
 jobProfile.textContent = 'Explorador';
 
-
-
 function openForm() {
-  if (formEdit.classList.contains('profile__form-open')) {
-      formEdit.classList.remove('profile__form-open');
-  } else {
-      formEdit.classList.add('profile__form-open');
-
-  }
+    formEdit.classList.add('profile__form-open');
 }
 
 function closeForm() {
-
-  formEdit.classList.remove('profile__form-open')
-
+    formEdit.classList.remove('profile__form-open');
 }
 
 function handleSubmit(event) {
-  event.preventDefault();
-
-
-  closeForm();
+    event.preventDefault();
+    // Atualizar os valores do perfil com os valores dos inputs
+    nameProfile.textContent = nameInput.value;
+    jobProfile.textContent = jobInput.value;
+    closeForm();
 }
 
-profbtn.addEventListener('click', openForm)
-formclose.addEventListener('click', closeForm)
-formEdit.addEventListener('submit', handleSubmit)
+profbtn.addEventListener('click', openForm);
+formclose.addEventListener('click', closeForm);
+formEdit.addEventListener('submit', handleSubmit);
 
 document.addEventListener('click', function(event) {
-  if (!formEdit.contains(event.target) && !profbtn.contains(event.target)) {
-    closeForm();
-  }
+    if (!formEdit.contains(event.target) && !profbtn.contains(event.target)) {
+        closeForm();
+    }
 });
-
 /// funções relacionadas ao formulário do places
 
 const profbtnplaces = document.querySelector('.profile__btn-card');

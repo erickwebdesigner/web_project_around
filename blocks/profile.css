@@ -78,3 +78,159 @@
   color: white;
   font-size: 22px;
 }
+
+@media screen and (max-width: 599px) and (min-width: 321px){
+  .profile{
+    width: 550px;
+  }
+
+  .profile__btn-card{
+    margin: 0px auto 0px;
+  }
+
+}
+
+@media screen and (max-width: 879px) and (min-width: 600px){
+  .profile{
+    width: 880px;
+    flex-direction: row;
+  }
+
+  .profile__img{
+    width: 169px;
+    height: 160px;
+  }
+
+  .profile__info {
+    width: 415px;
+    height: 77px;
+    display: flex;
+    margin: 40px 0px 0px 30px;
+  }
+
+  .profile__name {
+    width: 325px;
+    height: 55px;
+    margin: 0px 18px 0px 0px;
+    text-align: left;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 48px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .profile__job {
+    width: 415px;
+    height: 22px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    margin: 0px 0px 0px 0px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .profile__btn-info:hover
+  {
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 60%;
+  }
+
+  .profile__btn-info {
+    width: 24px;
+    height: 24px;
+    margin: 15px 0px 0px 0px;
+  }
+
+  .profile__btn-card:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 60%;
+  }
+
+  .profile__btn-card {
+    width: 150px;
+    height: 50px;
+    margin: 90px 0px 0px 130px;
+  }
+  }
+
+@media screen and (max-width: 1660px) and (min-width: 880px){
+.profile{
+  width: 880px;
+  flex-direction: row;
+}
+
+.profile__img{
+  width: 169px;
+  height: 160px;
+}
+
+.profile__info {
+  width: 415px;
+  height: 77px;
+  display: flex;
+  margin: 40px 0px 0px 30px;
+}
+
+.profile__name {
+  width: 325px;
+  height: 55px;
+  margin: 0px 18px 0px 0px;
+  text-align: left;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile__job {
+  width: 415px;
+  height: 22px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile__btn-info:hover
+{
+  transition: 0.2s;
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.profile__btn-info {
+  width: 24px;
+  height: 24px;
+  margin: 15px 0px 0px 0px;
+}
+
+.profile__btn-card:hover{
+  transition: 0.2s;
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.profile__btn-card {
+  width: 150px;
+  height: 50px;
+  margin: 90px 0px 0px 130px;
+}
+}
+
