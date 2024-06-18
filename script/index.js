@@ -12,23 +12,26 @@ const formEdit = document.querySelector('.profile__form');
 nameProfile.textContent = 'Jaques Costeau';
 jobProfile.textContent = 'Explorador';
 
+
+
 function openForm() {
   if (formEdit.classList.contains('profile__form-open')) {
       formEdit.classList.remove('profile__form-open');
   } else {
       formEdit.classList.add('profile__form-open');
+
   }
 }
 
 function closeForm() {
+
   formEdit.classList.remove('profile__form-open')
+
 }
 
 function handleSubmit(event) {
   event.preventDefault();
 
-  nameProfile.textContent = nameInput.value;
-  jobProfile.textContent = jobInput.value;
 
   closeForm();
 }

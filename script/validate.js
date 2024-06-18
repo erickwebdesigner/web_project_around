@@ -75,7 +75,7 @@ enableValidation({
 });
 
 enableValidation({
-  formSelector: 'card-form',
+  formSelector: 'cardForm',  // Certifique-se de que o formSelector corresponda ao atributo 'name' do formulário
   inputsSelector: '.cards__input',
   buttomForm: '.cards__form-submit',
   inputErrorClass: 'cards__form-error',

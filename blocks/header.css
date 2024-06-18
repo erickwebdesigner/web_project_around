@@ -1,25 +1,22 @@
 body {
+  width: 320px;
   background-color: black;
   color: white;
+  box-sizing: border-box;
+  font-family: 'Inter', Arial,  sans-serif;
   margin: 0px;
   padding: 0px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-.header {
-  width: 880px;
-  height: 74px;
-  margin: 45px auto 40px;
+.header{
   border-bottom: 1px solid #545454;
+  margin-top: 28px;
 }
 
-.header__img {
-  width: 173px;
-  height: 33px;
+.header__title {
+  width: 126px;
+  height: 24px;
+  margin: 0px auto 32px 27px;
 }
 
-@media screen and (max-width: 990px) {
-  .header__img{
-    margin-left: 20px;
-  }
-}
