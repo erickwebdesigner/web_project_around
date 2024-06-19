@@ -13,35 +13,32 @@
   </head>
 
   <body>
-      <header class="header">
+    <header class="header">
+      <img
+        class="header__title"
+        src="./images/titulo.png"
+        alt="Titulo Around the U.S"
+      />
+    </header>
+    <main class="content">
+      <div class="profile">
         <img
-          class="header__title"
-          src="./images/titulo.png"
-          alt="Titulo Around the U.S"
+          class="profile__img"
+          src="./images/Avatarjacquescosteau.png"
+          alt="profile picture"
         />
-      </header>
-  <!--  <main class="content">
-        <div class="profile">
-          <img
-            class="profile__img"
-            src="./images/Avatarjacquescosteau.png"
-            alt="profile picture"
-          />
-          <div class="profile__info">
-            <div class="profile__name"></div>
-            <button
-              name="openFormInfo"
-              id="btn-info"
-              class="profile__btn-info"
-            ></button>
-            <h1 class="profile__job"></h1>
+        <div class="profile__info">
+          <div class="profile__header">
+            <div class="profile__box">
+            <div class="profile__name">Jacques Cousteau</div>
+            <button name="openFormInfo" id="btn-info" class="profile__btn-info"></button>
           </div>
+            <div class="profile__job">Explorador</div>
+          </div>
+          <button name="openFormCard" id="btn-card" class="profile__btn-card">+</button>
+        </div>
 
-          <button name="openFormCard" id="btn-card" class="profile__btn-card">
-            +
-          </button>
-
-      <form
+        <form
             name="formProfile"
             id="profile-form"
             class="profile__form"
@@ -95,9 +92,9 @@
               </button>
             </div>
           </form>
-        </div>
+      </div>
 
-        <div class="cards">
+      <div class="cards">
         <form name="cardForm" id="card-form" class="cards__form" method="post" novalidate>
             <input
               name="cardsFormClose"
@@ -143,29 +140,28 @@
             </div>
           </form>
 
-          <template class="cards__box">
-            <div class="cards__itens">
-              <img class="cards__delete" src="./images/Trash.png" />
-              <img
-                class="cards__image"
-                src="./images/valeyosemite.png"
-                alt="fotos em cards"
-              />
-              <div class="cards__info">
-                <h1 class="cards__info-title"></h1>
-                <button class="cards__info-button"></button>
-              </div>
+        <template class="cards__box">
+          <div class="cards__itens">
+            <img class="cards__delete" src="./images/Trash.png" />
+            <img
+              class="cards__image"
+              src="./images/valeyosemite.png"
+              alt="fotos em cards"
+            />
+            <div class="cards__info">
+              <h1 class="cards__info-title"></h1>
+              <button class="cards__info-button"></button>
             </div>
-          </template>
         </div>
-      </main>
+      </template>
+      </div>
+    </main>
 
-      <footer class="footer">
+    <footer class="footer">
         <h1 class="footer__title">© 2021 Around The U.S.</h1>
-      </footer>
+    </footer>
 
-      <script src="./script/index.js"></script>
-      <script src="./script/validate.js"></script>-->
-
+    <script src="./script/index.js"></script>
+    <script src="./script/validate.js"></script>
   </body>
 </html>
