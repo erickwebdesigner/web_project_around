@@ -17,19 +17,26 @@ body {
   border-bottom: 1px solid #545454;
 }
 
-.header__img {
+.header__title {
   width: 173px;
   height: 33px;
 }
 
 @media  screen and (min-width:600px) and (max-width:900px) {
   .header {
-    width: 600px;
+    width: 100%;
+  }
+
+  .header__title{
+    margin-left: 24px;
   }
 }
 
 @media  screen and (min-width: 300px) and (max-width:599px) {
   .header{
-    width: 300px;
+    width: 100%;
+  }
+  .header__title{
+    margin-left: 24px;
   }
 }
