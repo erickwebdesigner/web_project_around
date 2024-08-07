@@ -79,6 +79,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const cardsForm = document.querySelector('.cards__form');
   const cardsSection = document.querySelector('.cards');
   const template = document.querySelector('.cards__box');
+  const imagebox = document.getElementById('imagebox');
+  const imageboxClose = document.getElementById('imagebox-close');
+  const imageboxImage = document.getElementById('imagebox-image');
+  const imageboxCaption = document.getElementById('imagebox-caption');
 
   const initialCards = [
     {
@@ -146,42 +150,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (event.target.classList.contains('cards__image')) {
-      const imageBox = document.createElement('div');
-      imageBox.classList.add('imagebox');
+      imageboxImage.setAttribute('src', event.target.src);
+      imageboxImage.setAttribute('alt', event.target.alt);
+      imageboxCaption.textContent = event.target.nextElementSibling.textContent;
+      imagebox.classList.add('imagebox__visible');
+    }
+  });
 
-      const imageBoxContent = document.createElement('div');
-      imageBoxContent.classList.add('imagebox__content');
+  imageboxClose.addEventListener('click', function() {
+    imagebox.classList.remove('imagebox__visible');
+  });
 
-      const imageBoxClose = document.createElement('span');
-      imageBoxClose.classList.add('imagebox__close');
-      imageBoxClose.textContent = '×';
-
-      const imageBoxImage = document.createElement('img');
-      imageBoxImage.classList.add('imagebox__image');
-      imageBoxImage.setAttribute('src', event.target.src);
-      imageBoxImage.setAttribute('alt', event.target.alt);
-
-      const lightboxCaption = document.createElement('div');
-      lightboxCaption.classList.add('imagebox__caption');
-      lightboxCaption.textContent = event.target.nextElementSibling.textContent;
-
-      imageBoxContent.appendChild(imageBoxClose);
-      imageBoxContent.appendChild(imageBoxImage);
-      imageBoxContent.appendChild(lightboxCaption);
-
-      imageBox.appendChild(imageBoxContent);
-
-      document.body.appendChild(imageBox);
-
-      imageBoxClose.addEventListener('click', function() {
-        imageBox.remove();
-      });
-
-      document.addEventListener('click', function(event) {
-        if (!imageBoxContent.contains(event.target) && !event.target.classList.contains('cards__image')) {
-          imageBox.remove();
-        }
-      });
+  document.addEventListener('click', function(event) {
+    if (imagebox.classList.contains('imagebox__visible') && !imagebox.querySelector('.imagebox__content').contains(event.target) && !event.target.classList.contains('cards__image')) {
+      imagebox.classList.remove('imagebox__visible');
     }
   });
 
@@ -189,13 +171,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (event.key === 'Escape') {
       closeForm();
       cardsFormclose();
-      const imageBox = document.querySelector('.imagebox');
-      if (imageBox) {
-        imageBox.remove();
+      if (imagebox.classList.contains('imagebox__visible')) {
+        imagebox.classList.remove('imagebox__visible');
       }
     }
   }
 
   document.addEventListener('keydown', keyHandler);
 });
-
