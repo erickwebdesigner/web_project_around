@@ -65,10 +65,12 @@
 .profile__form-name {
   width: 358px;
   height: 27.26px;
-  margin: 0px 36px 20px;
+  margin: 0px 36px 0px;
   border: 0;
 
 }
+
+
 
 .profile__form-job:valid{
   border-bottom: 1px solid green;
@@ -99,7 +101,7 @@
 .profile__form-submit {
   width: 358px;
   height: 50.15px;
-  margin: 30px 36px 37px;
+  margin: 35px 36px 10px;
   border-radius: 2px;
   background-color: #000000;
   color: #fff;
@@ -120,6 +122,10 @@
   font-weight: 400;
   line-height: 14.52px;
   width: 358px;
+}
+
+#profile-name-error{
+  margin-bottom: 20px;
 }
 
 @media  screen and (min-width:600px) and (max-width:900px) {
