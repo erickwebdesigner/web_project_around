@@ -17,6 +17,21 @@ export default class Card {
     this._element.querySelector('.cards__info-button').addEventListener('click', (event) => {
       event.target.classList.toggle('cards__button-liked');
     });
+
+    this._element.querySelector('.cards__image').addEventListener('click', () => {
+      this._openImagebox();
+    });
+  }
+
+  _openImagebox() {
+    const imageboxImage = document.querySelector('#imagebox-image');
+    const imageboxCaption = document.querySelector('#imagebox-caption');
+    const imagebox = document.querySelector('#imagebox');
+
+    imageboxImage.setAttribute('src', this._link);
+    imageboxImage.setAttribute('alt', this._name);
+    imageboxCaption.textContent = this._name;
+    imagebox.classList.add('imagebox__visible');
   }
 
   generateCard() {

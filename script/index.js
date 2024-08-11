@@ -14,14 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   };
 
-  // Inicializar a validação dos formulários
   const profileFormValidator = new FormValidation(validationConfig, '#profile-form');
   const cardFormValidator = new FormValidation(validationConfig, '#card-form');
 
   profileFormValidator.enableValidation();
   cardFormValidator.enableValidation();
 
-  // Restante do código para manipular os formulários e interações da página
   const profbtn = document.querySelector('.profile__btn-info');
   const formclose = document.querySelector('.profile__form-close');
   const nameProfile = document.querySelector('.profile__name');
@@ -126,19 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
       cardsSection.prepend(cardElement);
   }
 
-  cardsSection.addEventListener('click', function(event) {
-      if (event.target.classList.contains('cards__image')) {
-          imageboxImage.setAttribute('src', event.target.src);
-          imageboxImage.setAttribute('alt', event.target.alt);
-          imageboxCaption.textContent = event.target.nextElementSibling.textContent;
-          imagebox.classList.add('imagebox__visible');
-      }
-  });
-
-  const imagebox = document.getElementById('imagebox');
-  const imageboxClose = document.getElementById('imagebox-close');
-  const imageboxImage = document.getElementById('imagebox-image');
-  const imageboxCaption = document.getElementById('imagebox-caption');
+  const imageboxClose = document.querySelector('#imagebox-close');
+  const imagebox = document.querySelector('#imagebox');
 
   imageboxClose.addEventListener('click', function() {
       imagebox.classList.remove('imagebox__visible');
