@@ -1,151 +1,68 @@
 import Card from './Card.js';
 import FormValidation from './validate.js';
+import { profileUtils, cardsUtils } from './utils.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  const validationConfig = {
-      seletores: {
-          input: '.profile__input, .cards__input',
-          submitButton: '.profile__form-submit, .cards__form-submit'
-      },
-      classes: {
-          inactiveButton: 'profile__form-submit_disabled',
-          inputError: 'profile__input_type_error',
-          error: 'profile__error_visible'
-      }
-  };
+    const profileFormUtils = new profileUtils('.profile__form', '.profile__form-close', '.profile__btn-info', '.profile__name', '.profile__job');
+    const cardFormUtils = new cardsUtils('.cards__form', '.cards__form-close', '.profile__btn-card', '.cards');
 
-  const profileFormValidator = new FormValidation(validationConfig, '#profile-form');
-  const cardFormValidator = new FormValidation(validationConfig, '#card-form');
-
-  profileFormValidator.enableValidation();
-  cardFormValidator.enableValidation();
-
-  const profbtn = document.querySelector('.profile__btn-info');
-  const formclose = document.querySelector('.profile__form-close');
-  const nameProfile = document.querySelector('.profile__name');
-  const jobProfile = document.querySelector('.profile__job');
-  const nameInput = document.querySelector('.profile__form-name');
-  const jobInput = document.querySelector('.profile__form-job');
-  const formEdit = document.querySelector('.profile__form');
-
-  function openForm() {
-      formEdit.classList.add('profile__form-open');
-  }
-
-  function closeForm() {
-      formEdit.classList.remove('profile__form-open');
-  }
-
-  function handleSubmit(event) {
-      event.preventDefault();
-      nameProfile.textContent = nameInput.value;
-      jobProfile.textContent = jobInput.value;
-      closeForm();
-  }
-
-  profbtn.addEventListener('click', openForm);
-  formclose.addEventListener('click', closeForm);
-  formEdit.addEventListener('submit', handleSubmit);
-
-  document.addEventListener('click', function(event) {
-      if (!formEdit.contains(event.target) && !profbtn.contains(event.target)) {
-          closeForm();
-      }
-  });
-
-  const profbtnplaces = document.querySelector('.profile__btn-card');
-  const cardsEdit = document.querySelector('.cards__form');
-  const formCardsclose = document.querySelector('.cards__form-close');
-  const cardsSection = document.querySelector('.cards');
-  const cardsName = document.querySelector('.cards__form-name');
-  const cardsLink = document.querySelector('.cards__form-link');
-
-  function cardsForm() {
-    cardsEdit.classList.toggle('cards__form-open');
-  }
-
-  function cardsFormclose() {
-    cardsEdit.classList.remove('cards__form-open');
-  }
-
-  function cardsHandleSubmit(event) {
-    event.preventDefault();
-    const newCard = {
-      name: cardsName.value,
-      link: cardsLink.value
+    const validationConfig = {
+        seletores: {
+            input: '.profile__input, .cards__input',
+            submitButton: '.profile__form-submit, .cards__form-submit'
+        },
+        classes: {
+            inactiveButton: 'profile__form-submit_disabled',
+            inputError: 'profile__input_type_error',
+            error: 'profile__error_visible'
+        }
     };
-    addCard(newCard);
-    cardsEdit.reset();
-    cardsFormclose();
-  }
 
-  profbtnplaces.addEventListener('click', cardsForm);
-  formCardsclose.addEventListener('click', cardsFormclose);
-  cardsEdit.addEventListener('submit', cardsHandleSubmit);
+    const profileFormValidator = new FormValidation(validationConfig, '#profile-form');
+    const cardFormValidator = new FormValidation(validationConfig, '#card-form');
 
-  document.addEventListener('click', function(event) {
-    if (!cardsEdit.contains(event.target) && !profbtnplaces.contains(event.target)) {
-      cardsFormclose();
-    }
-  });
+    profileFormValidator.enableValidation();
+    cardFormValidator.enableValidation();
 
-  const initialCards = [
-      {
-          name: "Vale de Yosemite",
-          link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
-      },
-      {
-          name: "Lago Louise",
-          link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
-      },
-      {
-          name: "Montanhas Carecas",
-          link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
-      },
-      {
-          name: "Latemar",
-          link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
-      },
-      {
-          name: "Parque Nacional da Vanoise",
-          link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
-      },
-      {
-          name: "Lago di Braies",
-          link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
-      }
-  ];
+    const initialCards = [
+        {
+            name: "Vale de Yosemite",
+            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
+        },
+        {
+            name: "Lago Louise",
+            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
+        },
+        {
+            name: "Montanhas Carecas",
+            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
+        },
+        {
+            name: "Latemar",
+            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
+        },
+        {
+            name: "Parque Nacional da Vanoise",
+            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
+        },
+        {
+            name: "Lago di Braies",
+            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
+        }
+    ];
 
-  initialCards.forEach(card => addCard(card));
+    initialCards.forEach(card => cardFormUtils.addCard(card));
 
-  function addCard(cardData) {
-      const card = new Card(cardData, '#card-template');
-      const cardElement = card.generateCard();
-      cardsSection.prepend(cardElement);
-  }
+    const imageboxClose = document.querySelector('#imagebox-close');
+    const imagebox = document.querySelector('#imagebox');
 
-  const imageboxClose = document.querySelector('#imagebox-close');
-  const imagebox = document.querySelector('#imagebox');
+    imageboxClose.addEventListener('click', function() {
+        imagebox.classList.remove('imagebox__visible');
+    });
 
-  imageboxClose.addEventListener('click', function() {
-      imagebox.classList.remove('imagebox__visible');
-  });
-
-  document.addEventListener('click', function(event) {
-      if (imagebox.classList.contains('imagebox__visible') && !imagebox.querySelector('.imagebox__content').contains(event.target) && !event.target.classList.contains('cards__image')) {
-          imagebox.classList.remove('imagebox__visible');
-      }
-  });
-
-  function keyHandler(event) {
-      if (event.key === 'Escape') {
-          closeForm();
-          cardsFormclose();
-          if (imagebox.classList.contains('imagebox__visible')) {
-              imagebox.classList.remove('imagebox__visible');
-          }
-      }
-  }
-
-  document.addEventListener('keydown', keyHandler);
+    document.addEventListener('click', function(event) {
+        if (imagebox.classList.contains('imagebox__visible') && !imagebox.querySelector('.imagebox__content').contains(event.target) && !event.target.classList.contains('cards__image')) {
+            imagebox.classList.remove('imagebox__visible');
+        }
+    });
 });
