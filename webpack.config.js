@@ -7,7 +7,7 @@ const { Stats } = require("webpack");
 module.exports = {
   devtool: 'inline-source-map',
   entry:{
-    main: "./src/script/index.js"
+    main: "./src/pages/index.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),

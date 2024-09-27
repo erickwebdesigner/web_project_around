@@ -1,3 +1,4 @@
+import  './index.css';
 import Card from '../components/Card.js';
 import FormValidation from '../components/validate.js';
 import { profileUtils, cardsUtils } from '../components/utils.js';
