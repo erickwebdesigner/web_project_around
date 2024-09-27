@@ -1,6 +1,6 @@
-import Card from './Card.js';
-import FormValidation from './validate.js';
-import { profileUtils, cardsUtils } from './utils.js';
+import Card from '../components/Card.js';
+import FormValidation from '../components/validate.js';
+import { profileUtils, cardsUtils } from '../components/utils.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const profileFormUtils = new profileUtils('.profile__form', '.profile__form-close', '.profile__btn-info', '.profile__name', '.profile__job');
