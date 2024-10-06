@@ -1,5 +1,5 @@
 import  './index.css';
-import {} from '../utils/constants.js';
+import {cardsContainer, initialCards, templateCardSelector} from '../utils/constants.js';
 import Card from '../components/Card.js';
 import Section from '../components/Section.js';
 
@@ -30,7 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
     profileFormValidator.enableValidation();
     cardFormValidator.enableValidation();
 
+    function render(card){
+      const createdCard = new Card(card, templateCardSelector).generateCard();
+      listItem.addItem(createdCard)
+    }
 
+    const listItem = new Section({items: initialCards, renderer: render}, cardsContainer);
+    listItem.renderItems();
 
     const imageboxClose = document.querySelector('#imagebox-close');
     const imagebox = document.querySelector('#imagebox');

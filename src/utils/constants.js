@@ -1,4 +1,4 @@
-const initialCards = [
+export const initialCards = [
   {
       name: "Vale de Yosemite",
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
@@ -24,5 +24,5 @@ const initialCards = [
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
   }
 ];
-export const templateCardSelector = document.querySelector("#cards-template")
+export const templateCardSelector = document.querySelector("#card-template")
 export const cardsContainer = document.querySelector(".cards")
