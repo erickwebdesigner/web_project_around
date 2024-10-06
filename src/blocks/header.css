@@ -1,0 +1,30 @@
+.header {
+  width: 880px;
+  height: 74px;
+  margin: 45px auto 40px;
+  border-bottom: 1px solid #545454;
+}
+
+.header__title {
+  width: 173px;
+  height: 33px;
+}
+
+@media  screen and (min-width:600px) and (max-width:900px) {
+  .header {
+    width: 100%;
+  }
+
+  .header__title{
+    margin-left: 24px;
+  }
+}
+
+@media  screen and (min-width: 300px) and (max-width:599px) {
+  .header{
+    width: 100%;
+  }
+  .header__title{
+    margin-left: 24px;
+  }
+}
