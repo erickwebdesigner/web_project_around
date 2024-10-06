@@ -1,11 +1,16 @@
 import  './index.css';
+import {} from '../utils/constants.js';
 import Card from '../components/Card.js';
+import Section from '../components/Section.js';
+
 import FormValidation from '../components/validate.js';
 import { profileUtils, cardsUtils } from '../components/utils.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const profileFormUtils = new profileUtils('.profile__form', '.profile__form-close', '.profile__btn-info', '.profile__name', '.profile__job');
     const cardFormUtils = new cardsUtils('.cards__form', '.cards__form-close', '.profile__btn-card', '.cards');
+
+
 
     const validationConfig = {
         seletores: {
@@ -25,34 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     profileFormValidator.enableValidation();
     cardFormValidator.enableValidation();
 
-    const initialCards = [
-        {
-            name: "Vale de Yosemite",
-            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"
-        },
-        {
-            name: "Lago Louise",
-            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg"
-        },
-        {
-            name: "Montanhas Carecas",
-            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_bald-mountains.jpg"
-        },
-        {
-            name: "Latemar",
-            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_latemar.jpg"
-        },
-        {
-            name: "Parque Nacional da Vanoise",
-            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_vanoise.jpg"
-        },
-        {
-            name: "Lago di Braies",
-            link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
-        }
-    ];
 
-    initialCards.forEach(card => cardFormUtils.addCard(card));
 
     const imageboxClose = document.querySelector('#imagebox-close');
     const imagebox = document.querySelector('#imagebox');
