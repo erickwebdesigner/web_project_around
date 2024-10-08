@@ -31,6 +31,119 @@
       </div>
       <button class="button profile__editcard-button" id="profile-editcard-button">+</button>
     </section>
+
+    <section class="cards" id="cards">
+
+    </section>
+
+    <section class="form">
+      <div class="form__edit-profile">
+      <form
+        class="form__container"
+        name="form-edit-profile"
+        action="#"
+        novalidate
+      >
+        <button class="form__reset-button" type="reset" aria-label="Close button"></button>
+        <h2 class="form__header">Editar profile</h2>
+        <fieldset class="form__fields">
+          <label for="name-input">
+            <input
+              type="text"
+              class="form__input form__title"
+              id="name-input"
+              name="name"
+              placeholder="Name"
+              value="Jacques Cousteau"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="form__input-error" id="name-input-error"></span>
+          </label>
+          <label for="job-input">
+            <input
+              type="text"
+              class="form__input form__subtitle"
+              id="job-input"
+              name="job"
+              placeholder="Job"
+              value="Explorer"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="form__input-error" id="job-input-error"></span>
+          </label>
+          <button class="form__submit-button" type="submit" value="Save" aria-label="Save button">
+            Salvar
+          </button>
+        </fieldset>
+      </form>
+    </div>
+    </section>
+
+    <section class="form">
+      <div class="form__add-card">
+      <form class="form__container" name="form__add-card" action="#" novalidate>
+        <button class="form__reset-button" type="reset" aria-label="Close button"></button>
+        <h2 class="form__header">Novo Local</h2>
+        <fieldset class="form__fields">
+          <label for="card-input">
+            <input
+              type="text"
+              class="form__input form__card-title"
+              id="card-input"
+              name="title"
+              placeholder="Title"
+              value=""
+              minlength="1"
+              maxlength="30"
+              required
+            />
+            <span class="form__input-error" id="card-input-error"></span>
+          </label>
+          <label for="link-input">
+            <input
+              type="url"
+              class="form__input form__image-link"
+              id="link-input"
+              name="link"
+              placeholder="Image link"
+              value=""
+              required
+            />
+            <span class="form__input-error" id="link-input-error"></span>
+          </label>
+          <button class="form__submit-button" type="submit" value="Create" aria-label="Create button">
+            Criar
+          </button>
+        </fieldset>
+      </form>
+    </div>
+    </section>
+
+    <section class="card">
+    <template class="card__box" id="card-template">
+      <div class="card__itens">
+        <img class="card__delete" src="./images/Trash.png" />
+        <img
+          class="card__image"
+          src="./images/valeyosemite.png"
+          alt="fotos em cards"
+        />
+        <div class="card__info">
+          <h1 class="card__info-title"></h1>
+          <button class="card__info-button"></button>
+        </div>
+    </div>
+  </template>
+</section>
   </main>
+
+  <footer class="footer">
+    <h1 class="footer__title">© 2021 Around The U.S.</h1>
+  </footer>
+
 </body>
 </html>

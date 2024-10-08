@@ -1,0 +1,11 @@
+{
+  "name": "web_project_around",
+  "version": "1.0.0",
+  "description": "Este é um projeto simples que demonstra a utilização de HTML, CSS e JavaScript para criar uma página da web interativa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
