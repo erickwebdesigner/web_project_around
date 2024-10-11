@@ -123,22 +123,18 @@
     </div>
     </section>
 
-    <section class="card">
-    <template class="card__box" id="card-template">
+
+    <template class="card" id="card-template">
       <div class="card__itens">
         <img class="card__delete" src="./images/Trash.png" />
-        <img
-          class="card__image"
-          src="./images/valeyosemite.png"
-          alt="fotos em cards"
-        />
+        <img class="card__image" src="./images/valeyosemite.png" alt="fotos em cards" />
         <div class="card__info">
           <h1 class="card__info-title"></h1>
-          <button class="card__info-button"></button>
+          <button class="card__info-like"></button>
         </div>
-    </div>
-  </template>
-</section>
+      </div>
+    </template>
+
   </main>
 
   <footer class="footer">
@@ -152,6 +148,9 @@
       <div class="imagebox__caption" id="imagebox-caption"></div>
     </div>
   </div>
-  
+
+  <script type="module" src="./pages/index.js"></script>
+  <script type="module" src="./components/FormaValidate.js"></script>
+
 </body>
 </html>
