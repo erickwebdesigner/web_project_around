@@ -1,10 +1,11 @@
 export default class Card {
-  constructor({ cardItem, handleDeleteClick, handleLikeClick }, templateSelector) {
+  constructor({ cardItem, handleDeleteClick, handleLikeClick, handleCardClick }, templateSelector) {
     this._name = cardItem.name;
     this._link = cardItem.link;
     this._templateSelector = templateSelector;
     this._handleDeleteClick = handleDeleteClick;
     this._handleLikeClick = handleLikeClick;
+    this._handleCardClick = handleCardClick;
   }
 
   _getCardTemplate() {
@@ -24,6 +25,14 @@ export default class Card {
     this._element.querySelector('.card__info-like').addEventListener('click', () => {
       this._handleLikeClick(this);
     });
+
+    this._element.querySelector('.card__image').addEventListener
+    ('click', () => {
+      this._handleCardClick({
+        title:this._name,
+        link:this._link
+      })
+    })
   }
 
   generateCard() {
