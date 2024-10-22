@@ -1,5 +1,6 @@
 import Card from "../components/Card.js";
 import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js"; // Importando a classe UserInfo
 import {
   cardsContainer,
   templateCardSelector,
@@ -18,6 +19,12 @@ import PopupWithForm from "../components/PopupWithForm.js";
 document.addEventListener('DOMContentLoaded', () => {
   const templateCardElement = document.querySelector(templateCardSelector); // Template do card
   const cardsContainer = document.querySelector('.cards'); // Container onde os cards serão adicionados
+
+  // Instância da classe UserInfo para gerenciar informações do usuário
+  const userInfo = new UserInfo({
+    userName: profileName.textContent, // Nome inicial do perfil
+    userJob: profileJob.textContent,   // Trabalho inicial do perfil
+  });
 
   // Popup de imagem
   const popupWithImage = new PopupWithImage(openImageModal);
@@ -57,8 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const popupEditProfile = new PopupWithForm({
     popupSelector: '#editProfileModal',
     handleFormSubmit: (formData) => {
-      profileName.textContent = formData.name;
-      profileJob.textContent = formData.job;
+      // Atualiza o nome e o trabalho do perfil usando a instância de UserInfo
+      userInfo.updateUserInfo({ name: formData.name, job: formData.job });
+      userInfo.setUserInfo(); // Atualiza a interface com os novos dados do usuário
       popupEditProfile.close();
     }
   });
