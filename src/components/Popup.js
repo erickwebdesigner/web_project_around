@@ -4,38 +4,50 @@ export default class Popup {
     this._handleEscClose = this._handleEscClose.bind(this);
   }
 
+  // Método para abrir o popup
+  open() {
+    if (this._popupElement.classList.contains('imagebox')) {
+      this._popupElement.classList.add("imagebox__visible");
+    } else {
+      this._popupElement.classList.add("form_visible");
+    }
+
+    document.addEventListener("keydown", this._handleEscClose);
+  }
+
+  // Método para fechar o popup
+  close() {
+    if (this._popupElement.classList.contains('imagebox')) {
+      this._popupElement.classList.remove("imagebox__visible");
+    } else {
+      this._popupElement.classList.remove("form_visible");
+    }
+
+    document.removeEventListener("keydown", this._handleEscClose);
+  }
+
+  // Fechar o popup com a tecla ESC
   _handleEscClose(event) {
     if (event.key === "Escape") {
       this.close();
     }
   }
 
+  // Adiciona os listeners de fechar no botão e clicando fora do popup
   setEventListeners() {
-    const closeIcon = this._popupElement.querySelector(".imagebox__close");
+    const closeIcon = this._popupElement.querySelector(".imagebox__close, .form__reset-button");
 
-    // Verifica se o elemento de fechar existe antes de adicionar o listener
     if (closeIcon) {
       closeIcon.addEventListener("click", () => {
         this.close();
       });
     }
 
-    // Fechar popup clicando fora (na área sombreada)
-    this._popupElement.addEventListener("click", (event) => {
+    // Fechar ao clicar fora do conteúdo
+    this._popupElement.addEventListener("mousedown", (event) => {
       if (event.target === this._popupElement) {
         this.close();
       }
     });
-  }
-
-
-  open() {
-    this._popupElement.classList.add("imagebox__visible");
-    document.addEventListener("keydown", this._handleEscClose);
-  }
-
-  close() {
-    this._popupElement.classList.remove("imagebox__visible");
-    document.removeEventListener("keydown", this._handleEscClose);
   }
 }
