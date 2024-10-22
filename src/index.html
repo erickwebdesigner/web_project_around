@@ -33,10 +33,10 @@
     </section>
 
     <section class="cards" id="cards">
-
     </section>
 
-    <section class="form">
+    <!-- Modal de Edição de Profile -->
+    <section class="form" id="editProfileModal">
       <div class="form__edit-profile">
       <form
         class="form__container"
@@ -83,7 +83,8 @@
     </div>
     </section>
 
-    <section class="form">
+    <!-- Modal de Adição de Card -->
+    <section class="form" id="editCardModal">
       <div class="form__add-card">
       <form class="form__container" name="form__add-card" action="#" novalidate>
         <button class="form__reset-button" type="reset" aria-label="Close button"></button>
@@ -123,7 +124,6 @@
     </div>
     </section>
 
-
     <template class="card" id="card-template">
       <div class="card__itens">
         <img class="card__delete" src="./images/Trash.png" />
@@ -150,7 +150,6 @@
   </div>
 
   <script type="module" src="./pages/index.js"></script>
-  <script type="module" src="./components/FormaValidate.js"></script>
 
 </body>
 </html>
