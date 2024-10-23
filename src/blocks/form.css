@@ -122,14 +122,14 @@
 
 .form__submit-button_disabled {
   color: rgba(0, 0, 0, .2);
-  background: #ffffff;
+  background-color: #ffffff;
   border: 1px solid rgba(0,0,0,.2);
   pointer-events: none;
 }
 
 .form__submit-button_disabled:hover {
-  cursor: default;
-  background: none;
+  background-color: rgba(0, 0, 0, .2);
+  cursor: pointer;
 }
 
 .form__submit-button {
