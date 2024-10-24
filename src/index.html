@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon" />
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="shortcut icon" href="<%=require('./images/favicon-32x32.png')%>" type="image/x-icon" />
   <title>Document</title>
 </head>
 <body class="root">
   <header class="header">
     <img
       class="header__title"
-      src="./images/titulo.png"
+      src="<%=require('./images/titulo.png')%>"
       alt="Titulo Around the U.S"
     />
   </header>
@@ -19,7 +18,7 @@
     <section class="profile" id="profile">
       <div class="profile__container" id="profile-container">
         <div class="profile__container-img">
-          <img class="profile__img" src="./images/Avatarjacquescosteau.png" alt="Jacques Costeau">
+          <img class="profile__img" src="<%=require('./images/Avatarjacquescosteau.png')%>" alt="Jacques Costeau">
         </div>
         <div class="profile__info" id="profile-info">
           <div class="profile__text">
@@ -126,7 +125,7 @@
 
     <template class="card" id="card-template">
       <div class="card__itens">
-        <img class="card__delete" src="./images/Trash.png" />
+        <img class="card__delete" src="<%=require('./images/Trash.png')%>" />
         <img class="card__image" src="./images/valeyosemite.png" alt="fotos em cards" />
         <div class="card__info">
           <h1 class="card__info-title"></h1>
@@ -148,8 +147,5 @@
       <div class="imagebox__caption" id="imagebox-caption"></div>
     </div>
   </div>
-
-  <script type="module" src="./pages/index.js"></script>
-
 </body>
 </html>
