@@ -23,6 +23,7 @@ export default class FormValidator {
 
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
+      console.log('aonde esta vc')
       this._showInputError(inputElement);
     } else {
       this._hideInputError(inputElement);

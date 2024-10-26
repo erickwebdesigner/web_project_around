@@ -112,13 +112,15 @@
   margin-top: 20px;
 }
 
+.form__input:invalid{
+  border: 2px solid red;
+}
+
+
 .form__input:valid{
   border: 2px solid green;
 }
 
-.form__input:invalid{
-  border: 2px solid red;
-}
 
 .form__submit-button {
   display: flex;
@@ -142,7 +144,7 @@
 
 .form__submit-button_disabled {
   color: rgba(0, 0, 0, .2);
-  background-color: #ffffff;
+  background-color: #f5f1f1;
   border: 1px solid rgba(0,0,0,.2);
   pointer-events: none;
 }

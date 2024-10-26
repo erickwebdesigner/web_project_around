@@ -15,8 +15,9 @@ import {
   openImageModal,
   defaultConfig // Configuração de validação
 } from '../utils/constants.js';
-import PopupWithImage from "../components/PopupWithImage.js";//feito a alteração do nome
-import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithForm from '../components/PopupWithForm.js'
+import PopupWithImage from '../components/PopupWithImage.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const templateCardElement = document.querySelector(templateCardSelector);
