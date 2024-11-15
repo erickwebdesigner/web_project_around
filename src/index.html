@@ -7,6 +7,7 @@
   <title>Document</title>
 </head>
 <body class="root">
+
   <header class="header">
     <img
       class="header__title"
@@ -14,7 +15,9 @@
       alt="Titulo Around the U.S"
     />
   </header>
+
   <main class="content">
+
     <section class="profile" id="profile">
       <div class="profile__container" id="profile-container">
         <div class="profile__container-img">
@@ -74,7 +77,7 @@
             />
             <span class="form__input-error" id="job-input-error"></span>
           </label>
-          <button class="form__submit-button" type="submit" value="Save" aria-label="Save button">
+          <button class="form__submit-button" type="submit" value="Salvar" aria-label="Save button">
             Salvar
           </button>
         </fieldset>
@@ -115,7 +118,7 @@
             />
             <span class="form__input-error" id="link-input-error"></span>
           </label>
-          <button class="form__submit-button" type="submit" value="Create" aria-label="Create button">
+          <button class="form__submit-button" type="submit" value="Criar" aria-label="Create button">
             Criar
           </button>
         </fieldset>
@@ -123,6 +126,48 @@
     </div>
     </section>
 
+    <!-- Modal de Adição de Delete -->
+    <div class="form"  id="deleteCardModal">
+      <div class="form__delete-image">
+      <form class="form__container" name="delete-image" novalidate>
+        <button class="form__reset-button" type="reset" aria-label="Close button"></button>
+        <h2 class="form__header">Tem certeza</h2>
+        <fieldset class="form__fields form__fields-delete">
+          <button class="form__submit-button" type="submit" value="Yes" aria-label="Yes button">Yes</button>
+        </fieldset>
+      </form>
+    </div>
+    </div>
+
+    <!--modal de adição de avatar-->
+    <div class="form">
+      <div class="form__change-image">
+      <form class="form__container" name="change-image" novalidate>
+        <button class="form__reset-button" type="reset" aria-label="Close button"></button>
+        <h2 class="form__header">Alterar a foto de perfil</h2>
+        <fieldset class="form__fields">
+
+          <label for="linkImage-input">
+              <input
+                type="url"
+                class="form__input form__image-link"
+                id="linkImage-input"
+                name="imageLink"
+                placeholder="Image link"
+                value=""
+                required
+              />
+              <span class="form__input-error" id="linkImage-input-error"></span>
+            </label>
+          <button class="form__submit-button" type="submit" value="Save" aria-label="Save button">
+              Save
+            </button>
+        </fieldset>
+      </form>
+    </div>
+    </div>
+
+    <!--Template para a alocação dos cards -->
     <template class="card" id="card-template">
       <div class="card__itens">
         <img class="card__delete" src="<%=require('./images/Trash.png')%>" />

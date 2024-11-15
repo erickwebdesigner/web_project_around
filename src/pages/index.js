@@ -17,11 +17,25 @@ import {
 } from '../utils/constants.js';
 import PopupWithForm from '../components/PopupWithForm.js'
 import PopupWithImage from '../components/PopupWithImage.js';
-
+import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const templateCardElement = document.querySelector(templateCardSelector);
   const cardsContainer = document.querySelector('.cards');
+
+  let cardToDelete = null; // Variável para armazenar o card a ser deletado
+
+  const popupDeleteCard = new PopupWithConfirmation({
+    popupSelector: '#deleteCardModal', // Selecione o modal de exclusão
+    handleConfirm: () => {
+      // A função de confirmação será executada ao confirmar a exclusão
+      cardToDelete._element.remove();
+      cardToDelete._element = null;
+    }
+  });
+
+  // Configurando os eventos de abertura do modal de confirmação de exclusão
+popupDeleteCard.setEventListeners();
 
   // Instância da classe UserInfo
   const userInfo = new UserInfo({
@@ -46,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const createdCard = new Card({
       cardItem: card,
       handleDeleteClick: (card) => {
-        card._element.remove();
-        card._element = null;
+        cardToDelete = card; // Armazene o card para exclusão posterior
+        popupDeleteCard.open(); // Abra o pop-up de confirmação
       },
       handleLikeClick: (card) => {
         const likeButton = card._element.querySelector('.card__info-like');
